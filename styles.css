@@ -4,6 +4,7 @@ html{
 }
 
 
+/* css toegepast op alles in de body  */
 body{
     background-image: 
     linear-gradient(
@@ -16,21 +17,21 @@ body{
 
     display: flex;
     flex-direction: column;
-    /* display: grid;
-    grid-template-rows: 500px 100px;
-    grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr; */
+
     justify-content: center;
-    /* align-items: center; */
+    
     justify-items: center;
     width: 100vw;
     height: 100vh;
     overflow:hidden;
     margin: 0;
     padding: 0;
-    /* display: flex; */
-    /* justify-content: center; */
+   
 }
 
+/* zorgt ervoor dat de kast blijft staan op zijn plek en door 
+de z-index naar achteren wordt verplaatst zodat het carousel eroverheen staat
+ */
 #kast{
     
     position: absolute;
@@ -45,6 +46,9 @@ body{
     z-index: -1;
 }
 
+/* de class over de elementen die door de pagina heen gaan,
+ze beginnen buiten het scherm en worden daarna met behulp van een 
+animatie en  transform verplaatst */
 #sparkle{
     position: absolute;
     left: -10em;
@@ -69,6 +73,7 @@ body{
 }
 
 
+/* definieert de animatie */
 @keyframes moveright {
     100% {
         transform: translateX(0);
@@ -116,12 +121,7 @@ section:nth-of-type(1) h1:hover{
 }
 
 
-/* section:nth-of-type(2){
-    overflow-x: auto;
-    overflow-y: hidden ;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-} */
+
 
 section:nth-of-type(2){
     display: flex;
@@ -129,7 +129,7 @@ section:nth-of-type(2){
 }
 
 
-
+/* list waar de carousel uit bestaat, */
 section:nth-of-type(2) ul {
     /* width:80%; */
     overflow-x: scroll;
@@ -138,25 +138,19 @@ section:nth-of-type(2) ul {
 
     padding: 0;
     margin:0;
-    
-/* 
-    margin-bottom: 2em; */
+
     list-style-type: none;
     width: 100%;
-    /* height: 100%; */
+   
     display: flex;
    
     z-index: 1;
     /* scroll-behavior: smooth; */
     /* transition: 0.5s ease-in-out; */
     scroll-snap-type: x mandatory;
-    
-
-    
-    
-
-    
+      
 }
+
 
 section:nth-of-type(2) ul:nth-of-type(1) li{
     display: flex;
@@ -171,12 +165,15 @@ section:nth-of-type(2) ul:nth-of-type(1) li{
    scroll-snap-align: center  ;
    justify-items: center;
 
-
+/* roept de animatie aan waardoor het carousel naar links en rechts beweegt, 
+animeert in en uit van links naar rechts */
    animation: 
     animate-in linear forwards , 
     animate-out linear forwards ;
 
+    /* gekoppeld aan de scrollpositie  */
     animation-timeline: view(inline);
+    /* animatie begint bij betreden van een element en eindigt als deze verlaat */
     animation-range: entry, exit;
    
 }
@@ -187,15 +184,14 @@ section:nth-of-type(2) ul:nth-of-type(1) li p{
     /* color: hsl(150, 80%, 60%); */
     visibility: hidden;
 
-
+/* bepaalt de styling wanneer het gekozen element een active state heeft */
     &.active{
         display: block;
         visibility:visible;
         background-image:
         linear-gradient(
             hsl(0, 0%, 100%),
-            hsl(302, 100%, 87%)
-        ) 
+            hsl(302, 100%, 87%)) 
         ;
         border-radius: 10%;
         
@@ -216,20 +212,23 @@ section:nth-of-type(2) ul:nth-of-type(1) li:last-of-type{
     margin-inline-end: 35vw ;
 }
 
+
+/* geeft aan hoe de li's eruit moetne zien als ze in komen scrollen
+de schaal veranderd namelijk en ze krijgen een hoek */
 @keyframes animate-in {
 	0% { 
         opacity: 0; 
         scale:.5;
         transform: 
         translateX(-100%)   rotateY(-90deg);
-        orientation: block;
+        /* orientation: block; */
     }
 	100% { 
         opacity: 1; 
         scale:1;
         transform:
         translateX(0) rotateY(0deg);
-        orientation: block;
+        /* orientation: block; */
     }
 }
 

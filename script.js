@@ -9,7 +9,9 @@ const baseURL = 'https://fdnd.directus.app/'
 const endpointMe = 'items/person/200'
 
 const myURL = baseURL + endpointMe;
+// stelt mijn url op om de data uit de zoeken
 
+// overgenomen functie 
 async /*9*/ function getData(URL) {
     return ( //8
         fetch(myURL) //1
@@ -40,9 +42,12 @@ getData(myURL).then(data => {
     jurkBox.textContent = myName;
 
 
+    // maakt een variable aan voor het gekozen element
     let tShirtBox = document.querySelector(".tShirt .infoBox");
     console.log(tShirtBox)
+    // roept aan welke data er gevonden moet worden en waar deze staat
     let myBday = data.data.birthdate;
+    // laat weten welk onderdeel er vervangen gaat worden door de gekozen content die je net hebt laten oproepen
     tShirtBox.textContent = myBday;
 
 
@@ -66,11 +71,15 @@ getData(myURL).then(data => {
     // tekst omzetten naar JSON
     let myCustomJSON = JSON.parse(myCustomData);
 
+
     console.log(myCustomJSON);
 
+    
+    // een variable maken en aangeven dat er in de custom data een element is die age aangeeft en een waarde heeft
     let myLeeftijd = myCustomJSON.age
     console.log(myLeeftijd)
 
+    // aangeven welk element gebruikt gaat worden om vervangen te worden door de waarde die hij net heeft gevonden 
     paarsShirtBox.textContent = myLeeftijd;
 
     // je zoekt naar de H1 in het docuemtn en veranderd de content van de h1 met de data die je hebt gekregen van de APIŒ™``Í`Å„Q2
@@ -78,8 +87,8 @@ getData(myURL).then(data => {
 
 
 
-
 function openBox(obj) {
+    // zorgt ervoor dat de tekst bolletjes opkomen als je klikt en daarna weer verdwijnen
     obj.querySelector("p").classList.toggle("active");
 
     console.log("hoi")
