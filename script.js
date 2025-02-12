@@ -73,9 +73,6 @@ getData(myURL).then(data => {
 
     paarsShirtBox.textContent = myLeeftijd;
 
-    // let shirtsHangerBox = document.querySelector(".shirtsHanger .infoBox");
-    // let myfav_property = data.data.fav_property;
-    // shirtsHangerBox.textContent = myfav_property;
     // je zoekt naar de H1 in het docuemtn en veranderd de content van de h1 met de data die je hebt gekregen van de APIŒ™``Í`Å„Q2
 })
 

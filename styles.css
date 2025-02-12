@@ -57,6 +57,16 @@ body{
     animation: moveright 8s linear infinite ;
 }
 
+#stars{
+    position: absolute;
+    right: -10em;
+    width: 3em;
+    top: 20vh;
+
+    max-width: 10vw;
+    max-height: 10vh;
+    animation: moveleft 12s linear infinite ;
+}
 
 
 @keyframes moveright {
@@ -68,6 +78,14 @@ body{
 }
 }
 
+@keyframes moveleft {
+    100% {
+        transform: translateX(0);
+    }
+ 0% {
+    transform: translateX(-200vw);
+}
+}
 
 
 
@@ -92,8 +110,9 @@ section:nth-of-type(1) h1{
 }
 
 section:nth-of-type(1) h1:hover{
+    color: hsl(302, 100%, 87%);
     /* scale: 1.5; */
-    box-shadow: 4px 4px 5px ;
+    box-shadow: 4px 4px 4px ;
 }
 
 
