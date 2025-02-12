@@ -57,6 +57,8 @@ body{
     animation: moveright 8s linear infinite ;
 }
 
+
+
 @keyframes moveright {
     100% {
         transform: translateX(0);
@@ -87,6 +89,11 @@ section:nth-of-type(1) h1{
     top:10%;
     */
     /* size: 5em; */
+}
+
+section:nth-of-type(1) h1:hover{
+    /* scale: 1.5; */
+    box-shadow: 4px 4px 5px ;
 }
 
 
@@ -155,6 +162,7 @@ section:nth-of-type(2) ul:nth-of-type(1) li{
    
 }
 
+
 section:nth-of-type(2) ul:nth-of-type(1) li p{
     /* background-color: aqua; */
     /* color: hsl(150, 80%, 60%); */
@@ -171,8 +179,8 @@ section:nth-of-type(2) ul:nth-of-type(1) li p{
         ) 
         ;
         border-radius: 10%;
-        color: has;
-        padding: 2em;
+        
+        padding: 0.5em;
     }
 }
 
@@ -229,9 +237,13 @@ section:nth-of-type(2) ul:nth-of-type(1) li img{
     padding: 2em;
     width: 25vw;
     height: 25vw;
-
+   border-radius: 30%;
    /* margin-top: 15px; */
    
+}
+
+section:nth-of-type(2) ul:nth-of-type(1) li img:hover{
+    box-shadow: 2px 2px 4px hsl(0, 0%, 100%) ;
 }
 
 
